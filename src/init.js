@@ -21,11 +21,23 @@ const resizeCanvas = (win, canvas) => () => {
 
 const handleInputs = state => event => {
   let action = [];
-  switch(event.key) {
-    case 'ArrowUp': { action = [ROTATE]; break; }
-    case 'ArrowDown': { action = [MOVE, [0, -1]]; break; }
-    case 'ArrowLeft': { action = [MOVE, [-1, 0]]; break; }
-    case 'ArrowRight': { action = [MOVE, [1, 0]]; break; }
+  switch (event.key) {
+    case 'ArrowUp': {
+      action = [ROTATE];
+      break;
+    }
+    case 'ArrowDown': {
+      action = [MOVE, [0, -1]];
+      break;
+    }
+    case 'ArrowLeft': {
+      action = [MOVE, [-1, 0]];
+      break;
+    }
+    case 'ArrowRight': {
+      action = [MOVE, [1, 0]];
+      break;
+    }
     default: break;
   }
   state.game = applyAction(state.game, ...action);

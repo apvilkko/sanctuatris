@@ -18,10 +18,10 @@ const gameLoop = (scene, gameContainer, fn) => timestamp => {
     draw(scene, gameContainer);
   }
   fn(run);
-}
+};
 
 export default (window, scene, gameContainer) => {
   const raf = window.requestAnimationFrame;
   run = gameLoop(scene, gameContainer, raf);
   raf(run);
-}
+};

@@ -6,14 +6,13 @@ import tetrominos from './tetrominos';
 import S from './sfactory';
 
 function lum(hex, lum) {
-  const rgb = ["#"];
-  let c;
+  const rgb = ['#'];
   for (let i = 0; i < 3; i++) {
     const ci = parseInt(hex.substr(i * 2 + 1, 2), 16);
     const r = Math.round(
       Math.min(Math.max(0, ci + (ci * lum)), 255)
     ).toString(16);
-    rgb.push(("00" + r).substr(r.length));
+    rgb.push(('00' + r).substr(r.length));
   }
   return rgb.join('');
 }
@@ -109,4 +108,4 @@ export default (scene, gameContainer) => {
   }
 
   context.setTransform(1, 0, 0, 1, 0, 0);
-}
+};

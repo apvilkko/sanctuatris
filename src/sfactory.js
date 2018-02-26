@@ -12,6 +12,6 @@ export const initS = () => {
     });
   }
   return store.instance;
-}
+};
 
 export default initS();

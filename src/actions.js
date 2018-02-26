@@ -38,7 +38,7 @@ const moveCheck = (field, piece, x, y) => {
   const ret = {x: newX, y: newY};
   const rot = tetrominos[piece.type].rotations[piece.rotation];
   for (let i = 0; i < rot.length; ++i) {
-    const x1 = newX + rot[i][0]
+    const x1 = newX + rot[i][0];
     const y1 = newY - rot[i][1];
     const overX = x1 >= PLAYFIELD_DIMENSIONS[0] || x1 < 0;
     const atBottom = y1 < 0;
@@ -63,7 +63,7 @@ export const shouldTick = (game, timestamp) =>
   (timestamp - game.timestamp > BASELINE_SPEED);
 
 function applyAction(game, action, ...params) {
-  switch(action) {
+  switch (action) {
     case ROTATE: {
       const piece = game.piece;
       const newPiece = Object.assign({}, piece,
@@ -108,7 +108,7 @@ function applyAction(game, action, ...params) {
       const rot = tetrominos[commitPiece.type].rotations[commitPiece.rotation];
       let newField = [...game.field];
       for (let i = 0; i < rot.length; ++i) {
-        const x1 = commitPiece.x + rot[i][0]
+        const x1 = commitPiece.x + rot[i][0];
         const y1 = commitPiece.y - rot[i][1];
         newField[y1][x1].type = commitPiece.type;
       }

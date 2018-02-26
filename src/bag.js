@@ -1,5 +1,5 @@
 import S from './sfactory';
-import {PLAYFIELD_DIMENSIONS, SPAWN_COORDINATES} from './consts';
+import {SPAWN_COORDINATES} from './consts';
 import {TYPES} from './tetrominos';
 
 function shuffle(array) {
